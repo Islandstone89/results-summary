@@ -1,0 +1,222 @@
+/* Custom Properties */
+
+:root {
+    /* COLORS */
+
+    /* Primary */
+    --clr--light-red: hsl(0, 100%, 67%);
+    --clr--light-red-transparent: hsla(0, 100%, 67%, .1);
+
+    --clr--orangey-yellow: hsl(39, 100%, 56%);
+    --clr--orangey-yellow-transparent: hsla(39, 100%, 56%, .1);
+
+    --clr--green-teal: hsl(166, 100%, 37%);
+    --clr--green-teal-transparent: hsla(166, 100%, 37%, .1);
+
+    --clr--cobalt-blue: hsl(234, 85%, 45%);
+    --clr--cobalt-blue-transparent: hsla(234, 85%, 45%, .1);
+
+    /* Background */
+    --clr--light-slate-blue: hsl(252, 100%, 67%);
+    --clr--light-royal-blue: hsl(241, 81%, 54%);
+
+    /* Circle */
+    --clr--violet-blue: hsla(256, 72%, 46%, 1);
+    --clr--persian-blue: hsla(241, 72%, 46%, 0);
+
+    /* Neutral */
+    --clr--white: hsl(0, 0%, 100%);
+    --clr--pale-blue: hsl(221, 100%, 96%);
+    --clr--light-lavender: hsl(241, 100%, 89%);
+    --clr--light-lavender-transparent: hsla(241, 100%, 89%, .5);
+    --clr--dark-gray-blue: hsl(224, 30%, 27%);
+    --clr--dark-gray-blue-transparent: hsla(224, 30%, 27%, .5);
+
+
+    
+    /* TYPOGRAPHY */
+    --ff--hanken-grotesk: 'Hanken Grotesk', sans-serif;
+    --fw--bold: 700;
+    --fw--extra-bold: 800;
+    --fs--paragraph: 1.125rem;
+}
+
+/* CSS Reset */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    font: inherit;
+    text-decoration: none;
+}
+
+p {
+    font-size: var(--fs--paragraph);
+}
+
+body {
+    font-family: var(--ff--hanken-grotesk);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+@media (min-width: 768px) {
+    .card {
+        flex-direction: row;
+        max-width: 60rem;
+    }
+
+    .card > * {
+        flex-basis: 100%;
+    }
+}
+
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.2rem;
+    background: linear-gradient(var(--clr--light-slate-blue), var(--clr--light-royal-blue));
+    color: var(--clr--light-lavender);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.result h2,
+.result span {
+    color: var(--clr--white);
+}
+
+.result-score {
+    border-radius: 50%;
+    background: linear-gradient(var(--clr--violet-blue), var(--clr--persian-blue));
+    color: var(--clr--light-lavender-transparent);
+    max-width: 50%;
+    margin: auto;
+    padding: 4rem;
+}
+
+.result-score span {
+    font-size: 3rem;
+    display: block;
+    font-weight: var(--fw--extra-bold);
+}
+
+
+.summary {
+    padding: 2rem;
+}
+
+.summary-heading {
+    color: var(--clr--dark-gray-blue);
+    text-align: left;
+}
+
+.summary > * + * {
+    margin-top: 2rem;
+}
+
+.summary-scores {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.summary-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1rem;
+    font-weight: var(--fw--bold)
+}
+
+.skill {
+    display: flex;
+    gap: 1.2rem;
+}
+
+/* Reaction */
+.summary-score__reaction {
+    background-color: var(--clr--light-red-transparent);
+}
+
+.skill__title-reaction {
+    color: var(--clr--light-red)
+}
+
+/* Memory */
+.summary-score__memory {
+    background-color: var(--clr--orangey-yellow-transparent);
+}
+
+.skill__title-memory {
+    color: var(--clr--orangey-yellow)
+}
+
+/* Verbal */
+.summary-score__verbal {
+    background-color: var(--clr--green-teal-transparent);
+}
+
+.skill__title-verbal {
+    color: var(--clr--green-teal)
+}
+
+/* Visual */
+.summary-score__visual {
+    background-color: var(--clr--cobalt-blue-transparent);
+}
+
+.skill__title-visual {
+    color: var(--clr--cobalt-blue)
+}
+
+.skill-score {
+    color: var(--clr--dark-gray-blue);
+}
+
+.skill-score span {
+    color: var(--clr--dark-gray-blue-transparent);
+}
+
+
+/* "Continue" button */
+.continue {
+    display: inline-block;
+    background-color: var(--clr--dark-gray-blue);
+    color: var(--clr--white);
+    border-radius: 16px;
+    padding: 1rem 4rem;
+    width: 100%;
+}
