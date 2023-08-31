@@ -81,18 +81,21 @@ body {
     align-items: center;
     min-height: 100vh;
     text-align: center;
+    background-color: var(--clr--pale-blue);
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    
+    background-color: var(--clr--white);
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
 }
 
 @media (min-width: 768px) {
     .card {
         flex-direction: row;
-        max-width: 60rem;
+        max-width: 50rem;
     }
 
     .card > * {
@@ -121,7 +124,6 @@ body {
     border-radius: 50%;
     background: linear-gradient(var(--clr--violet-blue), var(--clr--persian-blue));
     color: var(--clr--light-lavender-transparent);
-    max-width: 50%;
     margin: auto;
     padding: 4rem;
 }
@@ -219,4 +221,8 @@ body {
     border-radius: 16px;
     padding: 1rem 4rem;
     width: 100%;
+}
+
+.continue:is(:hover,:focus) {
+    background: linear-gradient(var(--clr--light-slate-blue), var(--clr--light-royal-blue));
 }
